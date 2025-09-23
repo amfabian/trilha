@@ -1,0 +1,125 @@
+/* Importa uma fonte moderna do Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+/* Configurações globais e de reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f0f2f5; /* Um fundo suave para destacar o card */
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Container que segura e centraliza o card */
+.card-container {
+  width: 100%;
+  max-width: 450px; /* Largura máxima do card em telas grandes */
+  margin: auto;
+}
+
+/* O estilo do card */
+.card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Título do Jogo */
+.game-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a237e; /* Um azul escuro e sóbrio */
+  margin-bottom: 25px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #3f51b5; /* Linha de destaque */
+}
+
+/* Seção da Pergunta */
+.question-section {
+  margin-bottom: 30px;
+}
+
+.question-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #424242;
+  font-weight: 400;
+}
+
+/* Seção das opções de resposta */
+.options-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espaçamento entre os botões */
+}
+
+.option-btn {
+  font-family: "Poppins", sans-serif;
+  background-color: transparent;
+  color: #3f51b5;
+  border: 2px solid #3f51b5;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+  width: 100%;
+}
+
+.option-btn:hover {
+  background-color: #3f51b5;
+  color: #ffffff;
+  transform: scale(1.03);
+}
+
+/* Seção de Navegação entre os cards */
+.navigation-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.nav-btn {
+  font-family: "Poppins", sans-serif;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none; /* Remove sublinhado de links */
+  transition: background-color 0.3s;
+}
+
+.nav-btn:hover {
+  background-color: #5a6268;
+}
+
+/* Estilo para botão "Anterior" desabilitado no primeiro card */
+.nav-btn.disabled {
+  background-color: #c0c0c0;
+  cursor: not-allowed;
+  pointer-events: none;
+}
