@@ -123,3 +123,119 @@ body {
   cursor: not-allowed;
   pointer-events: none;
 }
+
+/* =============================================== */
+/* === ESTILOS PARA A PÁGINA DE APRESENTAÇÃO === */
+/* =============================================== */
+
+/* Container principal da página de apresentação */
+.presentation-container {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  max-width: 700px; /* Um pouco maior que o card */
+  margin: auto;
+}
+
+/* Container para os logos */
+.logos-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* Espaço entre os logos */
+  margin-bottom: 30px;
+  flex-wrap: wrap; /* Permite que os logos quebrem a linha em telas pequenas */
+}
+
+.logo {
+  max-height: 75px; /* Altura máxima para os logos */
+  width: auto;
+  object-fit: contain;
+}
+
+/* Conteúdo de texto */
+.content-container {
+  margin-bottom: 40px;
+}
+
+.presentation-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a237e;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.course-info {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #424242;
+  margin: 0 auto 30px auto;
+  max-width: 600px; /* Limita a largura do texto para melhor leitura */
+}
+
+.authors-section h3 {
+  font-size: 1.2rem;
+  color: #1a237e;
+  margin-bottom: 10px;
+}
+
+.authors-list {
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+  color: #424242;
+  line-height: 1.8;
+}
+
+/* Botão de "Iniciar Jogo" */
+.cta-container {
+  margin-top: 20px;
+}
+
+.cta-btn {
+  display: inline-block;
+  background-color: #3f51b5;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 15px 40px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.cta-btn:hover {
+  background-color: #303f9f;
+  transform: scale(1.05);
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 600px) {
+  .presentation-container {
+    padding: 25px;
+  }
+
+  .presentation-title {
+    font-size: 2rem;
+  }
+
+  .logo {
+    max-height: 60px;
+  }
+}
