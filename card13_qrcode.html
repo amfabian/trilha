@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo Trilha Relacional - Card 2</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="card-container">
+      <div class="card">
+        <div class="card-logos-container">
+          <img src="ifrs-logo.png" alt="Logo do IFRS" class="card-logo" />
+          <img src="mpie-logo.png" alt="Logo do MPIE" class="card-logo" />
+        </div>
+        <h1 class="game-title">Jogo Trilha Relacional</h1>
+
+        <div class="question-section">
+          <h2 class="question-title">Violência em casa e o medo de contar</h2>
+          <p class="question-text">
+            Fiquei sabendo que o Caio, meu colega da escola, sofre violência em
+            casa, mas tem medo de falar. O que posso fazer?
+          </p>
+        </div>
+
+        <div class="options-section">
+          <div class="qr-code-container">
+            <img
+              src="qrcode_card01.png"
+              alt="QR Code da questão"
+              class="qr-code-image"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      document.querySelectorAll(".accordion-btn").forEach((button) => {
+        button.addEventListener("click", () => {
+          const accordionContent = button.nextElementSibling;
+          button.classList.toggle("active");
+
+          if (button.classList.contains("active")) {
+            accordionContent.style.maxHeight =
+              accordionContent.scrollHeight + "px";
+          } else {
+            accordionContent.style.maxHeight = 0;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo Trilha Relacional - Card 2</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="card-container">
+      <div class="card">
+        <div class="card-logos-container">
+          <img src="ifrs-logo.png" alt="Logo do IFRS" class="card-logo" />
+          <img src="mpie-logo.png" alt="Logo do MPIE" class="card-logo" />
+        </div>
+        <h1 class="game-title">Jogo Trilha Relacional</h1>
+
+        <div class="question-section">
+          <h2 class="question-title">Humilhação no pátio</h2>
+          <p class="question-text">
+            O Gabriel sofre humilhação o tempo todo no pátio. O direito dele é
+            ter um ambiente seguro, acolhedor e livre desse tipo de agressão.
+            Cabe à escola garantir isso e trabalhar para que todos respeitem uns
+            aos outros. Mas parece que ninguém percebe isso, somente eu que sou
+            sua amiga. O que devo fazer?
+          </p>
+        </div>
+
+        <div class="options-section">
+          <div class="accordion-item">
+            <button class="accordion-btn impact">Impacto</button>
+            <div class="accordion-content">
+              <p>
+                A humilhação repetida afeta profundamente a autoestima de
+                Gabriel. Ele deixa de participar das atividades, sente medo de
+                estar entre os colegas e perde o prazer de vir à escola. Esse
+                tipo de violência, mesmo que “brincadeira” para alguns, pode
+                gerar ansiedade, isolamento e até abandono escolar. Além disso,
+                cria um ambiente escolar inseguro para todos. Mesmo sendo amiga,
+                você não precisa enfrentar tudo sozinha. Guardar segredo ou
+                ficar só torcendo para melhorar pode piorar a situação, descreva
+                essa situação para orientadora escolar.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-btn resolution">Resolução</button>
+            <div class="accordion-content">
+              <p>
+                A escola, segundo o ECA e as orientações do CIPAVE, tem o dever
+                de garantir um espaço livre de violência e discriminação. É
+                preciso intervir de forma educativa, ouvindo Gabriel,
+                acolhendo-o e chamando os envolvidos para uma conversa mediada.
+                A equipe escolar pode promover rodas de diálogo, campanhas de
+                empatia e atividades de convivência saudável, mas para isso
+                precisa saber o que está acontecendo. A cultura de paz se
+                constrói com respeito — e cada estudante deve entender que a
+                escola é um espaço de segurança, não de medo. Em casos como
+                este, procure a orientadora escolar.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      document.querySelectorAll(".accordion-btn").forEach((button) => {
+        button.addEventListener("click", () => {
+          const accordionContent = button.nextElementSibling;
+          button.classList.toggle("active");
+
+          if (button.classList.contains("active")) {
+            accordionContent.style.maxHeight =
+              accordionContent.scrollHeight + "px";
+          } else {
+            accordionContent.style.maxHeight = 0;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

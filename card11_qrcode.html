@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo Trilha Relacional - Card 2</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="card-container">
+      <div class="card">
+        <div class="card-logos-container">
+          <img src="ifrs-logo.png" alt="Logo do IFRS" class="card-logo" />
+          <img src="mpie-logo.png" alt="Logo do MPIE" class="card-logo" />
+        </div>
+        <h1 class="game-title">Jogo Trilha Relacional</h1>
+
+        <div class="question-section">
+          <h2 class="question-title">Humilhação no pátio</h2>
+          <p class="question-text">
+            O Gabriel sofre humilhação o tempo todo no pátio. O direito dele é
+            ter um ambiente seguro, acolhedor e livre desse tipo de agressão.
+            Cabe à escola garantir isso e trabalhar para que todos respeitem uns
+            aos outros. Mas parece que ninguém percebe isso, somente eu que sou
+            sua amiga. O que devo fazer?
+          </p>
+        </div>
+
+        <div class="options-section">
+          <div class="qr-code-container">
+            <img
+              src="qrcode_card01.png"
+              alt="QR Code da questão"
+              class="qr-code-image"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      document.querySelectorAll(".accordion-btn").forEach((button) => {
+        button.addEventListener("click", () => {
+          const accordionContent = button.nextElementSibling;
+          button.classList.toggle("active");
+
+          if (button.classList.contains("active")) {
+            accordionContent.style.maxHeight =
+              accordionContent.scrollHeight + "px";
+          } else {
+            accordionContent.style.maxHeight = 0;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

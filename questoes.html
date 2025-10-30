@@ -20,75 +20,148 @@
         </p>
       </div>
 
-      <div class="question-list">
-        <div class="question-item">
-          <div class="question-info">
-            <h3>Card 01</h3>
-            <p>
-              Sinais de alerta e a responsabilidade da escola em casos de
-              violência ou sofrimento do aluno.
-            </p>
-          </div>
-          <div class="question-link">
-            <a href="card01.html" class="link-btn">Acessar Card</a>
-          </div>
-        </div>
-
-        <div class="question-item">
-          <div class="question-info">
-            <h3>Card 02</h3>
-            <p>
-              Violência psicológica por parte de educadores e os direitos dos
-              alunos no ambiente escolar.
-            </p>
-          </div>
-          <div class="question-link">
-            <a href="card02.html" class="link-btn">Acessar Card</a>
-          </div>
-        </div>
-
-        <div class="question-item">
-          <div class="question-info">
-            <h3>Card 03</h3>
-            <p>
-              Cyberbullying e as consequências da disseminação de imagens
-              constrangedoras online.
-            </p>
-          </div>
-          <div class="question-link">
-            <a href="card03.html" class="link-btn">Acessar Card</a>
-          </div>
-        </div>
-
-        <div class="question-item">
-          <div class="question-info">
-            <h3>Card 04</h3>
-            <p>
-              Resolução de conflitos entre colegas e a promoção de uma cultura
-              da paz na escola.
-            </p>
-          </div>
-          <div class="question-link">
-            <a href="card04.html" class="link-btn">Acessar Card</a>
-          </div>
-        </div>
-
-        <div class="question-item">
-          <div class="question-info">
-            <h3>Card 05</h3>
-            <p>
-              Violência doméstica e o mito do castigo físico como método
-              educativo.
-            </p>
-          </div>
-          <div class="question-link">
-            <a href="card05.html" class="link-btn">Acessar Card</a>
-          </div>
-        </div>
+      <div id="cardContainer" class="question-list"></div>
+      <div class="pagination-container">
+        <button id="prevPage" class="pagination-btn">&lt; Anterior</button>
+        <span id="pageInfo" class="page-info">Página 1 de 5</span>
+        <button id="nextPage" class="pagination-btn">Próximo &gt;</button>
       </div>
       <div class="cta-container">
         <a href="index.html" class="nav-btn">Voltar ao Início</a>
       </div>
     </main>
+
+    <script>
+      const cardsData = [
+        // Cards 01-10: Situações Básicas e Introdutórias
+        {
+          id: "01",
+          title: "O silêncio do João - Sinais de alerta e sofrimento do aluno",
+        },
+        {
+          id: "02",
+          title:
+            "Direitos dos alunos e violência psicológica no ambiente escolar",
+        },
+        {
+          id: "03",
+          title: "Bullying e suas diferentes formas de manifestação",
+        },
+        { id: "04", title: "Identificando sinais de violência doméstica" },
+        { id: "05", title: "O papel do professor na prevenção da violência" },
+        { id: "06", title: "Construindo relações saudáveis na escola" },
+        {
+          id: "07",
+          title: "A importância do diálogo na resolução de conflitos",
+        },
+        { id: "08", title: "Promovendo um ambiente escolar seguro" },
+        { id: "09", title: "Lidando com situações de discriminação" },
+        { id: "10", title: "Desenvolvendo empatia nas relações escolares" },
+
+        // Cards 11-20: Cyberbullying e Tecnologia
+        { id: "11", title: "Cyberbullying e redes sociais na escola" },
+        { id: "12", title: "Uso responsável de tecnologia em sala de aula" },
+        { id: "13", title: "Proteção digital e privacidade online" },
+        { id: "14", title: "Compartilhamento seguro de conteúdo digital" },
+        { id: "15", title: "Consequências do cyberbullying" },
+        { id: "16", title: "Prevenção de assédio online" },
+        { id: "17", title: "Cidadania digital na escola" },
+        { id: "18", title: "Fake news e desinformação" },
+        { id: "19", title: "Tecnologia como ferramenta de aprendizagem" },
+        { id: "20", title: "Mediação digital na educação" },
+
+        // Cards 21-30: Inclusão e Diversidade
+        { id: "21", title: "Promoção da inclusão e respeito à diversidade" },
+        { id: "22", title: "Combate ao preconceito e discriminação" },
+        { id: "23", title: "Valorização das diferenças culturais" },
+        { id: "24", title: "Acessibilidade e educação inclusiva" },
+        { id: "25", title: "Igualdade de gênero na escola" },
+        { id: "26", title: "Combate ao racismo no ambiente escolar" },
+        { id: "27", title: "Respeito à diversidade religiosa" },
+        { id: "28", title: "Inclusão de alunos com deficiência" },
+        { id: "29", title: "Valorização da identidade cultural" },
+        { id: "30", title: "Promoção da equidade na educação" },
+
+        // Cards 31-40: Saúde Mental e Bem-estar
+        { id: "31", title: "Saúde mental dos estudantes" },
+        { id: "32", title: "Ansiedade e pressão acadêmica" },
+        { id: "33", title: "Prevenção do suicídio" },
+        { id: "34", title: "Lidando com o estresse escolar" },
+        { id: "35", title: "Autoestima e desenvolvimento pessoal" },
+        { id: "36", title: "Relações familiares e escolares" },
+        { id: "37", title: "Habilidades socioemocionais" },
+        { id: "38", title: "Mindfulness na educação" },
+        { id: "39", title: "Inteligência emocional" },
+        { id: "40", title: "Bem-estar na comunidade escolar" },
+
+        // Cards 41-50: Resolução de Conflitos
+        { id: "41", title: "Mediação de conflitos e diálogo construtivo" },
+        { id: "42", title: "Construção de uma cultura de paz" },
+        { id: "43", title: "Gestão de conflitos em sala" },
+        { id: "44", title: "Comunicação não-violenta" },
+        { id: "45", title: "Resolução colaborativa de problemas" },
+        { id: "46", title: "Prevenção de violência escolar" },
+        { id: "47", title: "Restauração de relações" },
+        { id: "48", title: "Construção de acordos" },
+        { id: "49", title: "Mediação entre pares" },
+        { id: "50", title: "Promoção da convivência harmônica" },
+      ];
+
+      const cardsPerPage = 10;
+      let currentPage = 1;
+      const totalPages = Math.ceil(cardsData.length / cardsPerPage);
+
+      function createCardElement(card) {
+        return `
+          <div class="question-item">
+            <div class="question-info">
+              <h3>Card ${card.id}</h3>
+              <p>${card.title}</p>
+            </div>
+            <div class="question-link">
+              <a href="card${card.id}.html" class="link-btn">Acessar Card</a>
+            </div>
+          </div>
+        `;
+      }
+
+      function displayCards(page) {
+        const container = document.getElementById("cardContainer");
+        const start = (page - 1) * cardsPerPage;
+        const end = start + cardsPerPage;
+        const pageCards = cardsData.slice(start, end);
+
+        container.innerHTML = pageCards
+          .map((card) => createCardElement(card))
+          .join("");
+        updatePagination();
+      }
+
+      function updatePagination() {
+        document.getElementById(
+          "pageInfo"
+        ).textContent = `Página ${currentPage} de ${totalPages}`;
+        document.getElementById("prevPage").disabled = currentPage === 1;
+        document.getElementById("nextPage").disabled =
+          currentPage === totalPages;
+      }
+
+      document.getElementById("prevPage").addEventListener("click", () => {
+        if (currentPage > 1) {
+          currentPage--;
+          displayCards(currentPage);
+        }
+      });
+
+      document.getElementById("nextPage").addEventListener("click", () => {
+        if (currentPage < totalPages) {
+          currentPage++;
+          displayCards(currentPage);
+        }
+      });
+
+      // Initial display
+      displayCards(1);
+    </script>
   </body>
 </html>

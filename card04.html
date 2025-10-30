@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jogo Trilha Relacional - Card 5</title>
+    <title>Jogo Trilha Relacional - Card 2</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -16,31 +16,71 @@
         <h1 class="game-title">Jogo Trilha Relacional</h1>
 
         <div class="question-section">
+          <h2 class="question-title"></h2>
           <p class="question-text">
-            Uma aluna nota que sua amiga está sempre com hematomas e ela diz que
-            seus pais acreditam que "bater é uma forma de educar". O que a lei
-            diz sobre isso?
+            Lucas era daqueles colegas que todo mundo gostava. Ele era
+            brincalhão, falava com todo mundo, tinha muitos amigos. Mas, depois
+            de um tempo, começou a ser alvo de piadas e posts maldosos na
+            internet. Lucas foi ficando mais quieto, afastado, sem vontade de
+            participar das atividades, e as notas começaram a cair. Imagine que
+            você percebe isso acontecendo. Qual seria sua reação?
           </p>
         </div>
 
         <div class="options-section">
-          <button class="option-btn">
-            a) É um mito. A lei proíbe o uso de castigo físico como forma de
-            correção ou disciplina.
-          </button>
-          <button class="option-btn">
-            b) A violência física só é crime se for praticada por estranhos, não
-            por familiares.
-          </button>
-          <button class="option-btn">
-            c) A escola não pode intervir, pois a responsabilidade de educar é
-            exclusiva dos pais.
-          </button>
-          <button class="option-btn">
-            d) A lei permite, desde que não cause lesões graves.
-          </button>
+          <div class="accordion-item">
+            <button class="accordion-btn impact">Impacto</button>
+            <div class="accordion-content">
+              <p>
+                O Lucas está sendo vítima de intimidação na internet
+                (cyberbullying). O impacto direto disso é a violência
+                psicológica. A violência psicológica ocorre porque as piadas e
+                posts maldosos são atos de humilhação, depreciação ou
+                discriminação, causando dano emocional e diminuindo a autoestima
+                dele. Ele sente dor e angústia. Os posts maldosos e as piadas na
+                internet usam a tecnologia para depreciar e constranger
+                psicossocialmente, o que tem um efeito multiplicador
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-btn resolution">Resolução</button>
+            <div class="accordion-content">
+              <p>
+                Para ajudar o Lucas, não basta somente apoiá-lo é preciso um ato
+                de coragem, é preciso contar para um adulto de sua família e da
+                família de Lucas, além é claro de relatar essas postagens aos
+                professores e orientadora escolar. Não aceitar o bullying é
+                tarefa de todos. O cyberbullying é crime e pode trazer
+                consequências sérias tanto pra quem pratica quanto para quem
+                compartilha ou apoia. Na internet, o que parece “brincadeira”
+                pode deixar marcas profundas em quem sofre e problemas reais
+                para quem faz. A responsabilização é feita pelo Estatuto da
+                Criança e do Adolescente (ECA) e o adolescente pode sofrer
+                medidas socioeducativas, como: advertência, obrigação de reparar
+                o dano, prestação de serviços à comunidade e até internação em
+                casos graves.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </main>
+
+    <script>
+      document.querySelectorAll(".accordion-btn").forEach((button) => {
+        button.addEventListener("click", () => {
+          const accordionContent = button.nextElementSibling;
+          button.classList.toggle("active");
+
+          if (button.classList.contains("active")) {
+            accordionContent.style.maxHeight =
+              accordionContent.scrollHeight + "px";
+          } else {
+            accordionContent.style.maxHeight = 0;
+          }
+        });
+      });
+    </script>
   </body>
 </html>

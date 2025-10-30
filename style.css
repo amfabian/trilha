@@ -36,7 +36,7 @@ body {
 /* Container que segura e centraliza o card */
 .card-container {
   width: 100%;
-  max-width: 480px; /* Um pouco mais de espaço */
+  max-width: 560px; /* Um pouco mais de espaço */
   margin: auto;
 }
 
@@ -70,6 +70,14 @@ body {
   margin-bottom: 35px;
 }
 
+.question-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ifrs-dark-gray);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 .question-text {
   font-size: 1.15rem; /* Levemente maior para leitura */
   line-height: 1.7;
@@ -84,27 +92,82 @@ body {
   gap: 15px;
 }
 
-/* Botões de Opção com novo estilo interativo */
-.option-btn {
+/* Estilos para o QR Code */
+.qr-code-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.qr-code-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos do Acordeon */
+.accordion-item {
+  margin-bottom: 15px;
+}
+
+.accordion-btn {
   font-family: "Poppins", sans-serif;
-  background-color: transparent;
-  color: var(--ifrs-dark-gray);
-  border: 2px solid var(--border-light); /* Borda neutra */
-  border-radius: 12px;
+  width: 100%;
   padding: 16px;
+  border: none;
+  border-radius: 12px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   text-align: left;
-  transition: all 0.3s ease; /* Transição suave */
-  width: 100%;
+  transition: all 0.3s ease;
+  position: relative;
+  color: white;
 }
 
-.option-btn:hover {
-  background-color: var(--ifrs-green);
-  border-color: var(--ifrs-green);
-  color: #ffffff;
-  transform: scale(1.03);
+.accordion-btn::after {
+  content: "+";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.accordion-btn.active::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.accordion-btn.impact {
+  background-color: #ff8c00; /* Cor laranja */
+}
+
+.accordion-btn.resolution {
+  background-color: #0066cc; /* Cor azul */
+}
+
+.accordion-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  background-color: white;
+  border-radius: 0 0 12px 12px;
+  padding: 0 16px;
+}
+
+.accordion-content p {
+  padding: 16px 0;
+  margin: 0;
+  line-height: 1.6;
+  color: var(--ifrs-dark-gray);
 }
 
 /* Seção de Navegação entre os cards (se você decidir adicioná-la de volta) */
@@ -345,4 +408,43 @@ body {
 .cta-btn.secondary:hover {
   background-color: var(--ifrs-green);
   color: #ffffff;
+}
+
+/* Estilos para a paginação */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+  gap: 20px;
+}
+
+.pagination-btn {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--ifrs-green);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background-color: #006a31;
+  transform: translateY(-2px);
+}
+
+.pagination-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.page-info {
+  font-size: 1rem;
+  color: var(--ifrs-dark-gray);
+  font-weight: 500;
 }

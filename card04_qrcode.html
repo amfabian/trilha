@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo Trilha Relacional - Card 2</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="card-container">
+      <div class="card">
+        <div class="card-logos-container">
+          <img src="ifrs-logo.png" alt="Logo do IFRS" class="card-logo" />
+          <img src="mpie-logo.png" alt="Logo do MPIE" class="card-logo" />
+        </div>
+        <h1 class="game-title">Jogo Trilha Relacional</h1>
+
+        <div class="question-section">
+          <h2 class="question-title"></h2>
+          <p class="question-text">
+            Lucas era daqueles colegas que todo mundo gostava. Ele era
+            brincalhão, falava com todo mundo, tinha muitos amigos. Mas, depois
+            de um tempo, começou a ser alvo de piadas e posts maldosos na
+            internet. Lucas foi ficando mais quieto, afastado, sem vontade de
+            participar das atividades, e as notas começaram a cair. Imagine que
+            você percebe isso acontecendo. Qual seria sua reação?
+          </p>
+        </div>
+
+        <div class="options-section">
+          <div class="qr-code-container">
+            <img
+              src="qrcode_card01.png"
+              alt="QR Code da questão"
+              class="qr-code-image"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      document.querySelectorAll(".accordion-btn").forEach((button) => {
+        button.addEventListener("click", () => {
+          const accordionContent = button.nextElementSibling;
+          button.classList.toggle("active");
+
+          if (button.classList.contains("active")) {
+            accordionContent.style.maxHeight =
+              accordionContent.scrollHeight + "px";
+          } else {
+            accordionContent.style.maxHeight = 0;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
