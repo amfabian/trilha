@@ -49,17 +49,20 @@
       </div>
     </main>
 
-    <script>
+        <script>
       document.querySelectorAll(".accordion-btn").forEach((button) => {
         button.addEventListener("click", () => {
           const accordionContent = button.nextElementSibling;
-          button.classList.toggle("active");
+          const isActive = button.classList.contains("active");
 
-          if (button.classList.contains("active")) {
-            accordionContent.style.maxHeight =
-              accordionContent.scrollHeight + "px";
-          } else {
-            accordionContent.style.maxHeight = 0;
+          document.querySelectorAll(".accordion-btn").forEach((btn) => {
+            btn.classList.remove("active");
+            btn.nextElementSibling.style.maxHeight = 0;
+          });
+
+          if (!isActive) {
+            button.classList.add("active");
+            accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
           }
         });
       });

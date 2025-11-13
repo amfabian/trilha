@@ -36,7 +36,7 @@ body {
 /* Container que segura e centraliza o card */
 .card-container {
   width: 100%;
-  max-width: 600px; /* Largura fixa para cards com QR code */
+  max-width: 560px; /* Um pouco mais de espaço */
   margin: auto;
 }
 
@@ -48,11 +48,7 @@ body {
   padding: 40px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 1200px; /* Altura fixa para cards com QR code */
-  display: flex;
-  flex-direction: column;
 }
-
 .card:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12);
